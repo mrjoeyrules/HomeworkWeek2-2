@@ -2,7 +2,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-float floatValidation(string inputMessage)
+double doubleValidation(string inputMessage)
 {
     bool loopControl = true;
     string rawValue;
@@ -12,20 +12,20 @@ float floatValidation(string inputMessage)
         cin >> rawValue;
         try
         {
-            float convertedValue = stod(rawValue);
+            double convertedValue = stod(rawValue);
             loopControl = false;
             return convertedValue;
         }
         catch (const std::exception&)
         {
-            cout << "Value " << rawValue << " couldn't be converted to Float, Try again" << endl;
+            cout << "Value " << rawValue << " couldn't be converted to double, Try again" << endl;
         }
     }
 }
 void userConverter()
 {
     double multiplier = 28.35;
-    double userInput = floatValidation("Enter the amount of ounces you want to convert: \n");
+    double userInput = doubleValidation("Enter the amount of ounces you want to convert: \n");
     double grams = userInput * multiplier;
     cout << userInput << " ounces is approximately " << grams << " grams" << endl;
 }
